@@ -7,11 +7,9 @@ const path = require('path')
 const dialog = require('dialog')
 
 router.post('/',(req,res)=>{
-    let {token} = req.body
     let verified = speakeasy.totp.verify({
         secret: multifactorAuth[0].idAscii,
         encoding: 'ascii',
-        token: token
     })
 
     //EN ESTE CASO LA VERIFICACIÓN FUE CORRECTA

@@ -36,7 +36,6 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 app.route('/')
     .get((req, res) => {
-        // res.send("imageApp")
         res.render('inicio', {
             title: 'inicio',
             condition: false
@@ -47,7 +46,7 @@ app.use('/inicio', inicioRouter);
 app.use('/firmaDocumentos', fileUp); 
 app.use('/edit', newPass) 
 app.use('/logs', bitacora) 
-app.use('/2fa', auth) // para registrar nuevos usuarios en la BD
+app.use('/2fa', auth) 
 
 httpsServer.listen(port, () => {
     console.log("HTTPS server running on port 8080");
